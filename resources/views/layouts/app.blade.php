@@ -41,7 +41,7 @@
                         @endcan
                         @can('users.index')
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('users.index')}}">Users</a>
+                                <a class="nav-link" href="{{route('users.index')}}">Usuarios</a>
                             </li>
                         @endcan
                         @can('roles.index')
