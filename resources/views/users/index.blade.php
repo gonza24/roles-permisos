@@ -6,10 +6,7 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
-                    Productos
-                    @can('products.create')
-                    <a href="{{route('products.create')}}" class="btn btn-sm btn-primary float-right">Crear</a>
-                    @endcan
+                    Usuarios
                 </div>
 
                 <div class="card-body">
@@ -22,27 +19,27 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($products as $product)
+                            @foreach($users as $user)
                             <tr>
-                                <td>{{$product->id}}</td>
-                                <td>{{$product->name}}</td>
+                                <td>{{$user->id}}</td>
+                                <td>{{$user->name}}</td>
                                 <td width="10px">
-                                    @can('products.show')
-                                    <a href="{{route('products.show', $product->id)}}" class="btn btn-sm btn-secondary">
+                                    @can('users.show')
+                                    <a href="{{route('users.show', $user->id)}}" class="btn btn-sm btn-secondary">
                                         Ver
                                     </a>
                                     @endcan
                                 </td>
                                 <td width="10px">
-                                    @can('products.edit')
-                                    <a href="{{route('products.edit', $product->id)}}" class="btn btn-sm btn-secondary">
+                                    @can('users.edit')
+                                    <a href="{{route('users.edit', $user->id)}}" class="btn btn-sm btn-secondary">
                                         Editar
                                     </a>
                                     @endcan
                                 </td>
                                 <td width="10px">
-                                    @can('products.destroy')
-                                    {!! Form::open(['route' => ['products.destroy', $product->id], 'method' =>'DELETE']) !!}
+                                    @can('users.destroy')
+                                    {!! Form::open(['route' => ['users.destroy', $user->id], 'method' =>'DELETE']) !!}
                                         <button type="" class="btn btn-sm btn-danger">
                                             Eliminar
                                         </button>
@@ -53,7 +50,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{$products->links()}}
+                    {{$users->links()}}
               </div>
           </div>
       </div>

@@ -6,15 +6,12 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
-                    Producto 
+                    Usuario 
                 </div>
 
                 <div class="card-body">
-                    {!! Form::open(['route' => 'products.store'] ) !!}
-
-                        @include('products.partials.form')
-
-                    {!! Form::close()!!}
+                    <p><strong>Nombre</strong> {{$user->name}}</p>
+                    <p><strong>Email</strong> {{$user->email}}</p>
                 </div>
             </div>
         </div>
