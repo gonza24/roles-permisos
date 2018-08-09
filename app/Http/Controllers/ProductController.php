@@ -50,7 +50,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('products.show', $product);
+        return view('products.show', compact('product'));
     }
 
     /**
@@ -61,7 +61,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('products.edit', $product);
+        return view('products.edit', compact('product'));
     }
 
     /**
@@ -71,7 +71,7 @@ class ProductController extends Controller
      * @param  \App\Product  $products
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $products)
+    public function update(Request $request, Product $product)
     {
         $product->update($request->all());
 
@@ -85,7 +85,7 @@ class ProductController extends Controller
      * @param  \App\Product  $products
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $products)
+    public function destroy(Product $product)
     {
         $product->delete();
 
